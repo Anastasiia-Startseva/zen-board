@@ -1,75 +1,23 @@
-# React + TypeScript + Vite
+📝 Zen Board
+Zen Board — это минималистичный и интуитивно понятный таск-менеджер (Kanban-доска), созданный для того, чтобы помочь пользователям сосредоточиться на главном, не отвлекаясь на перегруженные интерфейсы.
+Live Demo
+🚀 Особенности 
+Полный CRUD: Создание, редактирование и удаление задач и колонок.
+Drag-and-Drop: Интуитивное перемещение карточек между колонками (реализовано с помощью @dnd-kit).
+Persistence: Данные сохраняются в localStorage, что позволяет сохранять прогресс после перезагрузки страницы.
+Responsive Design: Полная адаптивность под мобильные устройства и планшеты.
+Clean UI: Минималистичный "Zen" интерфейс с акцентом на UX.
+🛠 Стек технологий 
+Frontend: React 18
+Language: TypeScript 
+Styling: Tailwind CSS
+State Management: React Hooks
+Drag-and-Drop: @dnd-kit 
+Build Tool: Vite
+Icons: Lucide React
+🧠 Технические решения и вызовы 
+Оптимизация Drag-and-Drop: Вместо тяжелых библиотек я выбрала @dnd-kit за его модульность. Реализована логика сортировки внутри колонок и перемещения между ними с использованием стратегий verticalListSortingStrategy.
+Управление состоянием: Для проекта такого масштаба было решено использовать нативный React State и localStorage вместо Redux, чтобы избежать избыточности (Prop Drilling минимизирован за счет архитектуры компонентов).
+Типизация: Весь проект написан на TypeScript. Описаны интерфейсы для Task, Column и Id, что исключает ошибки при манипуляции данными.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+https://anastasiia-startseva.github.io/zen-board/
