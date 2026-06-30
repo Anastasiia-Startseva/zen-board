@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 import { Droppable } from '@hello-pangea/dnd';
 import { type Column, type Task } from '../types';
-import { TaskCard } from './TaskCard';
 import { useBoardStore } from '../store/useBoardStore';
 import { Plus, Trash2 } from 'lucide-react';
+import { TaskCard } from './TaskCard';
 
 interface Props {
   column: Column;
@@ -38,7 +38,7 @@ export const BoardColumn = ({ column, tasks }: Props) => {
             ref={provided.innerRef}
             {...provided.droppableProps}
             className={`
-              flex-1 overflow-y-auto px-3 py-2 min-h-[100px] transition-colors
+              flex-1 overflow-y-auto px-3 py-2 min-h-[150px] transition-colors duration-200
               ${snapshot.isDraggingOver ? 'bg-slate-200/50' : ''}
             `}
           >
@@ -46,6 +46,12 @@ export const BoardColumn = ({ column, tasks }: Props) => {
               <TaskCard key={task.id} task={task} index={index} />
             ))}
             {provided.placeholder}
+            
+            {columnTasks.length === 0 && !snapshot.isDraggingOver && (
+              <div className="h-full flex flex-col items-center justify-center opacity-40 py-10 border-2 border-dashed border-slate-300 rounded-xl">
+                <p className="text-xs font-medium text-slate-500">No tasks yet</p>
+              </div>
+            )}
           </div>
         )}
       </Droppable>
