@@ -27,8 +27,8 @@ export const TaskCard = ({ task, index }: Props) => {
             transition={{ duration: 0.2, delay: index * 0.05 }}
             className={`
               bg-white p-4 rounded-xl shadow-sm border border-slate-200
-              group hover:border-accent hover:shadow-md transition-all duration-200
-              ${snapshot.isDragging ? 'shadow-2xl rotate-2 border-accent scale-105' : ''}
+              group hover:border-[#4c3cfc] hover:shadow-md transition-all duration-200
+              ${snapshot.isDragging ? 'shadow-2xl rotate-2 border-[#4c3cfc] scale-105' : ''}
             `}
           >
             <div className="flex items-start justify-between gap-2">

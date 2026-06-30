@@ -16,7 +16,7 @@ export const BoardColumn = ({ column, tasks }: Props) => {
   const columnTasks = useMemo(() => tasks.filter(t => t.columnId === column.id), [tasks, column.id]);
 
   return (
-    <div className="bg-column w-[320px] max-h-[80vh] flex flex-col rounded-xl shadow-sm border border-slate-200">
+    <div className="bg-[#ebecf0] w-[320px] max-h-[80vh] flex flex-col rounded-xl shadow-sm border border-slate-200">
       <div className="p-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <h2 className="font-bold text-slate-700">{column.title}</h2>
@@ -61,7 +61,7 @@ export const BoardColumn = ({ column, tasks }: Props) => {
           const content = prompt("What needs to be done?");
           if (content) addTask(column.id, content);
         }}
-        className="m-3 flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:text-accent transition-all text-slate-500 text-sm font-medium"
+        className="m-3 flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:text-[#4c3cfc] transition-all text-slate-500 text-sm font-medium"
       >
         <Plus size={18} />
         Add a card
